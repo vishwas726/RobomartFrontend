@@ -1,0 +1,98 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+   
+
+}
+body{
+
+  font-family: "Roboto", sans-serif;
+  
+}
+.cursor{
+
+  cursor: pointer;
+
+}
+
+.hd{
+
+  font-size: 34px;
+  font-weight: 600;
+  margin-top: 2rem ;
+  margin-bottom: 2rem ;
+}
+
+:root {
+  --primary-color: #3f51b5; /* Main green used for buttons, links, and highlights */
+  --secondary-color: #5e6dc1; /* Light green used for borders */
+  --border-color: #ececec; /* Light gray used for borders */
+  --text-color: #333; /* Default text color */
+  --light-text-color: #666; /* Lighter text color */
+  --badge-bg-color: #3f51b5; /* Yellow background for badges to stand out */
+
+  /* --badge-bg-color: #697ce9;  */
+
+
+  --badge-border-color: rgb(236, 235, 235); /* Border color for select dropdown */
+  --background-color: #fff; /* White background for containers */
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
+    -ms-appearance: textfield; /* Internet Explorer */
+}
+
+/* for lodder */
+
+
+/* From Uiverse.io by ZacharyCrespin2 */ 
+/* From Uiverse.io by bociKond */ 
+.loader {
+  width: 44.8px;
+  height: 44.8px;
+  color: #554cb5;
+  position: relative;
+  background: radial-gradient(11.2px,currentColor 94%,#0000);
+}
+
+.loader:before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(10.08px at bottom right,#0000 94%,currentColor) top    left,
+          radial-gradient(10.08px at bottom left ,#0000 94%,currentColor) top    right,
+          radial-gradient(10.08px at top    right,#0000 94%,currentColor) bottom left,
+          radial-gradient(10.08px at top    left ,#0000 94%,currentColor) bottom right;
+  background-size: 22.4px 22.4px;
+  background-repeat: no-repeat;
+  animation: loader 1.5s infinite cubic-bezier(0.3,1,0,1);
+}
+
+@keyframes loader {
+  33% {
+    inset: -11.2px;
+    transform: rotate(0deg);
+  }
+
+  66% {
+    inset: -11.2px;
+    transform: rotate(90deg);
+  }
+
+  100% {
+    inset: 0;
+    transform: rotate(90deg);
+  }
+}

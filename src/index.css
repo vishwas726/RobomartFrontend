@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+@tailwind base;
+@tailwind components;
+
+body{
+
+    font-family: "Quicksand", sans-serif;
+
+}
+
+#root{
+  background-color: white;
+}
+
+.ProductCard{
+    position: relative;
+    z-index: 1;
+}
+
+.ProductCard::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.549);
+    z-index: 2;
+    border-radius: 10px; 
+}
+/* For WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 4px; /* Width of the vertical scrollbar */
+    height: 4px; /* Height of the horizontal scrollbar */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(88, 103, 241, 0.5); /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Roundness of the scrollbar thumb */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.1); /* Color of the scrollbar track */
+  }
+
+  .animation{
+    animation: popup 1s linear 1 forwards;animation: slide-in 2s ease-in-out 1s ;
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    pointer-events: all;
+    width: 24px;
+    height: 24px;
+    -webkit-appearance: none;
+    /* @apply w-6 h-6 appearance-none pointer-events-auto; */
+    }
+    
+  @keyframes popup {
+     0%{
+      top:20rem;
+     }
+     100%{
+      top: 0rem;
+     }
+  }
+
+  .animIn{
+    animation: slide 0.8s ease-in-out forwards;
+  }
+
+  .animIn1{
+    animation: slide1 0.8s ease-in-out forwards;
+  }
+
+  .animOut{
+    animation: slide3 0.8s linear  forwards;
+    display: flex;
+  }
+  .animOut1{
+    animation: slide4 0.8s linear forwards;
+    display: flex;
+  }
+
+  /* .animOut1{
+    animation: slide2 1s ease-in-out forwards;
+  } */
+
+  @keyframes slide {
+    0%{
+     transform: translateX(-0rem);
+    }
+    30%, 45%{
+      transform: translateX(-10rem);
+      opacity: 0;
+    }
+    100%{
+      opacity: 0;
+      display: none;
+    }
+ }
+
+ @keyframes slide1 {
+  
+  0%{
+   transform: translateX(0rem);
+  }
+  30%, 45%{
+    transform: translateX(10rem);
+    opacity: 0;
+  }
+  100%{
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes slide3 {
+  0%{
+   transform: translateX(-10rem);
+  }
+  30%, 45%{
+    transform: translateX(2rem);
+  }
+  100%{
+    transform: translateX(0rem);
+    display: flex;
+  }
+}
+@keyframes slide4 {
+  0%{
+   transform: translateX(10rem);
+  }
+  30%, 45%{
+    transform: translateX(-2rem);
+  }
+  100%{
+    transform: translateX(0rem);
+    display: flex;
+  }
+}
+
+.fadeaway{
+  animation: faded 0.5s linear forwards;
+}
+
+@keyframes faded {
+  0%{
+   opacity: 0;
+  }
+  70%{
+    opacity: 1;
+  }
+  100%{
+   opacity: 1;
+  }
+}
+
+/* .bounce{
+  animation: faded1 0.3s linear forwards;
+}
+
+@keyframes faded1 {
+  0%{
+   transform: translateY(0rem);
+   transform: rotate(0deg);
+  }
+  39%{
+    transform: translateY(1rem);
+    transform: rotate(360deg);
+  }
+  100%{
+    transform: translateY(0rem);
+    transform: rotate(0deg);
+  }
+} */
+
+
+.clipThing{
+  clip-path: polygon(0 0, 100% 0, 53% 49%, 0 100%, 0 100%, 0 99%, 0% 80%, 0 0);
+
+}
+
+.clipThing1{
+  /* background-image: linear-gradient(to right bottom, #ff48ff, #cc54f5, #9a58e5, #6b57cf, #3f51b5); */
+  background-color: #3F51B5;
+}
+
+/* For header Css Start */
+
+
+header .headerSearch .selecrDrop {
+  min-width: 120px;
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+}
+
+header .headerSearch .selecrDrop::after {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 20px;
+  background-color: var(--badge-border-color);
+  top: 5px;
+  right: 0px;
+}
+
+.LocationWrapper .selecrDrop .openSelect .arrow {
+  font-size: 20px;
+  position: absolute;
+  top: 3px;
+  right: -20px;
+  opacity: 0.7;
+  font-size: small;
+}
+.LocationWrapper .selecrDrop .openSelect span {
+  opacity: 0.7;
+}
+.LocationSelect {
+  height: 40px;
+  line-height: 35px;
+}
+
+.LocationWrapper .selecrDrop {
+  padding-left: 0.6rem;
+}
+
+
+
+
+.minList {
+  position: absolute;
+  display: none;
+}
+/* @media screen and (max-width: 900px) {
+  .Slider{
+    display: block !important;
+  }
+  .icons-Cards{
+    display: flex !important;
+  }
+  .wrapper-Header {
+    height: 5rem;
+    position: relative;
+    padding: 0rem 1rem;
+  }
+  .NavBar {
+    position: absolute;
+    top: 13px;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    background-color: transparent;
+    flex-direction: column;
+    z-index: 100;
+    padding-bottom: 1rem;
+  }
+  .NavBar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 40vw;
+    min-height: 55vh;
+    background-color: white;
+    bottom: 0;
+  }
+  .LinksHeader {
+    flex-direction: column;
+  }
+  .minList {
+    position: relative;
+    display: block;
+  }
+  .Nav-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    position: relative;
+    z-index: 101;
+  }
+  .minList {
+    display: flex !important;
+    margin-left: 2rem;
+    padding: 0 !important;
+    top: 0 !important;
+    left: 0 !important ;
+    width: 100vw !important;
+    background-color: red;
+    border: none !important;
+
+  }
+  .minList li {
+    font-size: 0.8rem !important;
+    text-align: center !important;
+    
+  }
+  .icon-mobile {
+    font-size: 1.1rem !important;
+  }
+  .headerSearch{
+    width: 190px !important;
+  }
+} */
+
+
+/* header css end  */
+
+
+
+/* selectDrop */
+
+
+.searchResult::-webkit-scrollbar {
+  width: 7px;
+}
+
+.searchResult::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+
+
+
+.headerSearch .selecrDrop .openSelect .arrow {
+  font-size: 20px;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  opacity: 0.7;
+}
+
+
+
+
+.headerSearch .selecrDrop .openSelect span{
+
+  font-size: 14px;
+  font-weight: bold;
+}
+/* selectDrop end*/
+
+/* For Address Page */
+/* Modal animation */
+@keyframes slideIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-modal {
+  animation: slideIn 0.2s ease-out;
+}
+
+@tailwind utilities;
