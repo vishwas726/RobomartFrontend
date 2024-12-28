@@ -36,7 +36,7 @@ const AccountSidebar = () => {
     const fetchInfo = async () => {
       try {
         const res = await axios.get(
-          "/api/user", // Endpoint URL
+          "/user", // Endpoint URL
           {
             headers: { authorization: "Bearer " + user.token }, // Authorization header
           }

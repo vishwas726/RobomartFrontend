@@ -42,7 +42,7 @@ function App() {
 
   const getSingle = async () => {
     try {
-      const res = await axios.get(`/api/search?name=${search}`);
+      const res = await axios.get(`/search?name=${search}`);
       setSingleProd(res.data);
      
     } catch (error) {

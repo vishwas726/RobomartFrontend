@@ -69,7 +69,7 @@ const Auth = ({UserSet}) => {
     if (isValid) {
       try {
         const { data } = await axios.post(
-          "/api/login",
+          "/login",
           { phoneNumber: phoneNumber, password: password },
           { withCredentials: true }
         );
@@ -137,7 +137,7 @@ const Auth = ({UserSet}) => {
 
     try {
       const { data } = await axios.post(
-        "/api/signup",
+        "/signup",
         { phoneNumber: phoneNumber, name: name, password: password },
         { withCredentials: true }
       );

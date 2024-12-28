@@ -24,10 +24,10 @@ const Sells = () => {
       const fetchData = async () => {
         try {
                 
-          const topSellingResp = await axios.get("/api/top-selling");
-          const trendingProductsResp = await axios.get("/api/trending-products");
-          const recentlyAddedResp = await axios.get("/api/recently-added");
-          const topRatedResp = await axios.get("/api/top-rated");
+          const topSellingResp = await axios.get("/top-selling");
+          const trendingProductsResp = await axios.get("/trending-products");
+          const recentlyAddedResp = await axios.get("/recently-added");
+          const topRatedResp = await axios.get("/top-rated");
   
         
           setTopSelling(topSellingResp.data.products || []);

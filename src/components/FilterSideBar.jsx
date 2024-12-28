@@ -29,7 +29,7 @@ const navigate= useNavigate()
             try {
               
                 const dealsOfTheDayResp = await axios.get(
-                    "/api/deals-of-the-day"
+                    "/deals-of-the-day"
                 );
                
 

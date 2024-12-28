@@ -34,7 +34,7 @@ const CategorySearch = () => {
       }
 
       const res = await axios.post(
-        "/api/cart", // Endpoint URL
+        "/cart", // Endpoint URL
         {
           productId: id,
           quantity: 1,
@@ -55,7 +55,7 @@ const CategorySearch = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const res = await axios.get("/api/searchByCategory", {
+        const res = await axios.get("/searchByCategory", {
             params: { category }, // Use category from route params
           });
         console.log(res.data); // Log the full response data

@@ -49,7 +49,7 @@ const CartPage = () => {
       if (user) {
         try {
           const res = await axios.get(
-            "/api/cart", // Endpoint URL
+            "/cart", // Endpoint URL
             {
               headers: { authorization: "Bearer " + user.token }, // Authorization header
             }
@@ -83,7 +83,7 @@ const CartPage = () => {
 
     try {
       const res = await axios.put(
-        `/api/cart/${id}`, // PUT endpoint to update product quantity
+        `/cart/${id}`, // PUT endpoint to update product quantity
         { quantity: newQuantity }, // Send the new quantity in the request body
         { headers: { authorization: `Bearer ${user.token}` } }
       );
@@ -97,7 +97,7 @@ const CartPage = () => {
 
   const handleDelete = async (id) => {
     try {
-      const res = await axios.delete(`/api/cart/${id}`, {
+      const res = await axios.delete(`/cart/${id}`, {
         headers: { authorization: `Bearer ${user.token}` },
       });
       setProducts(res.data.cart); // Update the state with the new cart data
@@ -141,7 +141,7 @@ const CartPage = () => {
 
   const handlePayment = async () => {
     try {
-      const response = await axios.post("/api/create-order", {
+      const response = await axios.post("/create-order", {
         userId: user.id, // user id from context or state
         products: products.map((product) => ({
           product: product._id, // Ensure the 'product' field is included
@@ -175,7 +175,7 @@ const CartPage = () => {
             };
 
             try {
-              const { data } = await axios.post("/api/verify-payment", paymentDetails);
+              const { data } = await axios.post("/verify-payment", paymentDetails);
                 
               if (data.success === true) {
                 toast.success("Payment Successful!");

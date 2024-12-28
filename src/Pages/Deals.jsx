@@ -53,7 +53,7 @@ const Deals = () => {
             }
 
             const res = await axios.post(
-                "/api/cart", // Endpoint URL
+                "/cart", // Endpoint URL
                 {
                     productId: id,
                     quantity: 1,
@@ -74,7 +74,7 @@ const Deals = () => {
         const getData = async () => {
 
             try {
-                const res = await axios.get("/api/popular");
+                const res = await axios.get("/popular");
                 console.log(res.data.products)
                 setProducts(res.data.products || []);
                 setLoading(false); // Turn off loading

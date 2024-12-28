@@ -32,7 +32,7 @@ const SearchPage = ({ singleProd }) => {
       }
 
       const res = await axios.post(
-        "/api/cart", // Endpoint URL
+        "/cart", // Endpoint URL
         {
           productId: id,
           quantity: 1,

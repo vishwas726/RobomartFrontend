@@ -23,7 +23,7 @@ const AddressPage = ({ userData, setUserData }) => {
   const handleAddAddress = async () => {
     try {
       const response = await axios.post(
-        "/api/addresses",
+        "/addresses",
         newAddress,
         {
           headers: {

@@ -35,7 +35,7 @@ const WishlistPage = ({ userData }) => {
   //     if (user) {
   //       try {
   //         const res = await axios.get(
-  //           "/api/wishlist", // Endpoint URL
+  //           "/wishlist", // Endpoint URL
   //           {
   //             headers: { authorization: "Bearer " + user.token }, // Authorization header
   //           }
@@ -56,7 +56,7 @@ const WishlistPage = ({ userData }) => {
 
   const handleDelete = async (id) => {
     console.log(id);
-    const res = await axios.delete("/api/wishlist", {
+    const res = await axios.delete("/wishlist", {
       headers: { authorization: "Bearer " + user.token },
       data: { productId: id },
     });

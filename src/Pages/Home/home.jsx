@@ -50,7 +50,7 @@ const {user }=useAuth()
       // }
       const token=user.token ;
       const res = await axios.post(
-        "/api/cart", // Endpoint URL
+        "/cart", // Endpoint URL
         {
           productId: id,
           quantity: 1,
@@ -72,10 +72,10 @@ const {user }=useAuth()
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const popularResp = await axios.get("/api/popular");
-
-        const dailySellsResp = await axios.get("/api/daily-sells");
-        const dealsOfTheDayResp = await axios.get("/api/deals-of-the-day");
+        const popularResp = await axios.get("/popular");
+        console.log(popularResp);  
+        const dailySellsResp = await axios.get("/daily-sells");
+        const dealsOfTheDayResp = await axios.get("/deals-of-the-day");
         
         setPopular(popularResp.data.products || []);
         setDailySells(dailySellsResp.data.products || []);

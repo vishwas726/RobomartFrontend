@@ -41,8 +41,8 @@ function SingleProduct() {
     const fetchProduct = async () => {
       try {
         setAddToCartLoading(true)
-        const response = await axios.get(`/api/product/${id}`); // Fetch product by ID related-products
-        const responseRelated = await axios.get(`/api/related-products/${id}`); // Fetch product by ID
+        const response = await axios.get(`/product/${id}`); // Fetch product by ID related-products
+        const responseRelated = await axios.get(`/related-products/${id}`); // Fetch product by ID
         setProduct(response.data); // Set the fetched product data
         setRelatedProducts(responseRelated.data); // Set the fetched related product data
         setLoading(false); // Turn off loading
@@ -67,7 +67,7 @@ function SingleProduct() {
 
   const checkIfInCart = async () => {
     try {
-      const response = await axios.get("/api/user", {
+      const response = await axios.get("/user", {
         headers: { authorization: "Bearer " + user.token },
       });
       console.log("to cart",response.data.cart);
@@ -83,7 +83,7 @@ function SingleProduct() {
   // Function to check if the product is in the user's wishlist
   const checkIfLiked = async () => {
     try {
-      const response = await axios.get("/api/user", {
+      const response = await axios.get("/user", {
         headers: { authorization: "Bearer " + user.token }, // Authorization header
       });
      
@@ -106,7 +106,7 @@ function SingleProduct() {
       
       if (isLiked) {
         // Remove product from wishlist
-        await axios.delete("/api/wishlist", {
+        await axios.delete("/wishlist", {
           headers: { authorization: "Bearer " + user.token },
           data: { productId: id },
         });
@@ -114,7 +114,7 @@ function SingleProduct() {
       } else {
         // Add product to wishlist
         await axios.post(
-          "/api/wishlist",
+          "/wishlist",
           { productId: id },
           {
             headers: { authorization: "Bearer " + user.token },
@@ -185,7 +185,7 @@ function SingleProduct() {
       }
 
       const res = await axios.post(
-        "/api/cart", // Endpoint URL
+        "/cart", // Endpoint URL
         {
           productId: id,
           quantity: Quantity,
@@ -212,7 +212,7 @@ const addToCart = async (id) => {
     // }
     const token=user.token ;
     const res = await axios.post(
-      "/api/cart", // Endpoint URL
+      "/cart", // Endpoint URL
       {
         productId: id,
         quantity: 1,
